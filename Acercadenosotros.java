@@ -17,7 +17,7 @@ private Icon[] iconos = {new ImageIcon(getClass().getResource(archivos[0]))};
 		
 		btn1 = new JButton("Cerrar");
 		lbl1 = new JLabel();
-		lbl2 = new JLabel("***Punto y Fama AlSixe Versión beta***");
+		lbl2 = new JLabel("***Punto y Fama AlSixe Versión beta**");
 		lbl3 = new JLabel("Autor: Alexis Vargas Arteaga");
 		lbl4 = new JLabel("Estudiante de Ing. de Sistemas");
 		lbl5 = new JLabel("Corporación Universitaria Rémington");		
