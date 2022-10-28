@@ -26,7 +26,7 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 	public Juego() {
 		super("Punto y Fama");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//PARA DESCARGAR DE LA MEMORIA AL CERRAR LA APLICACION
-		this.setSize(400,430);//TAMAÑO DE VENTANA		
+		this.setSize(400,430);//TAMAÃ‘O DE VENTANA		
 		this.setLocationRelativeTo(null);//PARA QUE LA APLICACION APAREZCA MEDIANANMENTE CETRADA
 		this.setResizable(false);
 		this.setLayout(null);		
@@ -41,7 +41,7 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 		archivo = new JMenu("Archivo");
 		ayuda = new JMenu("Ayuda");
 		opciones = new JMenu("Opciones");
-		restaurar = new JMenuItem ("Borrar Puntuación"); 
+		restaurar = new JMenuItem ("Borrar PuntuaciÃ³n"); 
 		restaurar.setIcon(new ImageIcon(getClass().getResource("Imagenes//Delete.png")));		
 		salir = new JMenuItem ("Salir"); 
 		salir.setIcon(new ImageIcon(getClass().getResource("Imagenes//Close.png")));		
@@ -49,9 +49,9 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 		acercade.setIcon(new ImageIcon(getClass().getResource("Imagenes//Info.png")));
 		nuevo = new JMenuItem ("Nuevo");
 		nuevo.setIcon(new ImageIcon(getClass().getResource("Imagenes//Clock.png")));
-		vertabla = new JMenuItem ("Ver Puntación");
+		vertabla = new JMenuItem ("Ver PuntaciÃ³n");
 		vertabla.setIcon(new ImageIcon(getClass().getResource("Imagenes//Load.png")));
-		ayu = new JMenuItem ("Cómo Jugar");
+		ayu = new JMenuItem ("CÃ³mo Jugar");
 		ayu.setIcon(new ImageIcon(getClass().getResource("Imagenes//Help.png")));
 		
 		barra.add(archivo);	
@@ -91,7 +91,7 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 		lblfama2 = new JLabel("FAMAS:");
 		lblresultado = new JLabel("Intento:");
 		lblnumresultado = new JLabel("");
-		lblinstruccion = new JLabel("Digite 4 Cifras que no se Repitan Entre sí");	
+		lblinstruccion = new JLabel("Digite 4 Cifras que no se Repitan Entre sÃ­");	
 		
 		txtnum1	= new JTextField ();		
 		txtnum2 = new JTextField ();
@@ -134,27 +134,27 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 		add(btnsalir);
 		add(btnlimpiar);
 		
-		lbltiempo.reshape(140, 140,110, 40);
-		lbltitulo.reshape(140, 10,110, 20);
-		btnreiniciar.reshape(10, 50,84, 25);
-		lblpuntaje.reshape(220, 50,50, 15);
-		lblnum1.reshape(220, 80,7, 10);
-		lblnum2.reshape(227, 80,7, 10);
-		lblnum3.reshape(234, 80,7, 10);
-		lblnum4.reshape(241, 80,7, 10);
-		lblpunto2.reshape(290, 70,51, 10);
-		lblfama2.reshape(290, 90,50, 10);
-		lblpunto1.reshape(350, 70,7, 10);
-		lblfama.reshape(350, 90,7, 10);
-		lblinstruccion.reshape(80, 200,250, 15);
-		lblresultado.reshape(150, 220,50, 15);
-		lblnumresultado.reshape(200, 220,30, 15);
+		lbltiempo.reshape(140, 140,130, 40);
+		lbltitulo.reshape(140, 10,150, 20);
+		btnreiniciar.reshape(10, 50,120, 25);
+		lblpuntaje.reshape(220, 50,60, 15);
+		lblnum1.reshape(220, 80,15, 10);
+		lblnum2.reshape(227, 80,15, 10);
+		lblnum3.reshape(234, 80,15, 10);
+		lblnum4.reshape(241, 80,15, 10);
+		lblpunto2.reshape(290, 70,65, 10);
+		lblfama2.reshape(290, 90,60, 10);
+		lblpunto1.reshape(350, 70,15, 10);
+		lblfama.reshape(350, 90,15, 20);
+		lblinstruccion.reshape(80, 200,300, 15);
+		lblresultado.reshape(150, 220,60, 15);
+		lblnumresultado.reshape(200, 220,40, 15);
 		txtnum1.reshape(110, 240,30, 30);
 		txtnum2.reshape(145, 240,30, 30);
 		txtnum3.reshape(180, 240,30, 30);
 		txtnum4.reshape(215, 240,30, 30);
-		btnaceptar.reshape(90, 280,80, 30);
-		btnlimpiar.reshape(185, 280,80, 30);
+		btnaceptar.reshape(90, 280,100, 30);
+		btnlimpiar.reshape(185, 280,120, 30);
 		btnsalir.reshape(135, 320,80, 30);
 		
 		txtnum1.addKeyListener(this);
@@ -188,14 +188,14 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 			Ayuda ayus = new Ayuda();		
 		}
 		if(e.getSource()==restaurar ){
-			int confirmado = JOptionPane.showConfirmDialog(null,"¿Está Seguro que Desea Borrar la Tabla de Puntaje?");
+			int confirmado = JOptionPane.showConfirmDialog(null,"Â¿EstÃ¡ Seguro que Desea Borrar la Tabla de Puntaje?");
 				if (JOptionPane.OK_OPTION == confirmado){
 					Record rec2 = new Record();			
 					rec2.Crear();
 					}								
 		}
 		if(e.getSource()==salir ){			
-			int confirmado = JOptionPane.showConfirmDialog(null,"¿Está Seguro que Desea Salir?");
+			int confirmado = JOptionPane.showConfirmDialog(null,"Â¿EstÃ¡ Seguro que Desea Salir?");
 			if (JOptionPane.OK_OPTION == confirmado){
 				System.exit(0);
 			}						
@@ -203,7 +203,7 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 		if(e.getSource()==nuevo ){			
 			String sonidonom="Sonidos//Nombre.wav";
 			Sonidos sonnom = new Sonidos(sonidonom);
-			nombre=JOptionPane.showInputDialog("¡Bienvenido! Digite su Nombre");			
+			nombre=JOptionPane.showInputDialog("Â¡Bienvenido! Digite su Nombre");			
 
 					
 			if(minutos==0 && segundos==0 && horas==0){
@@ -254,7 +254,7 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 			
 			String sonidonom="Sonidos//Nombre.wav";
 			Sonidos sonnom = new Sonidos(sonidonom);
-			nombre=JOptionPane.showInputDialog("¡Bienvenido! Digite su Nombre");			
+			nombre=JOptionPane.showInputDialog("Â¡Bienvenido! Digite su Nombre");			
 
 					
 			if(minutos==0 && segundos==0 && horas==0){
@@ -327,7 +327,7 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 					String sonido3="Sonidos//003.wav";
 					Sonidos son = new Sonidos(sonido3);
 					
-					JOptionPane.showMessageDialog(null, "¡Ganaste! Intentos "+intento+" Tiempo:  Horas: "+horas+" Minutoss: "+minutos+" Segundos: "+segundos);
+					JOptionPane.showMessageDialog(null, "Â¡Ganaste! Intentos "+intento+" Tiempo:  Horas: "+horas+" Minutoss: "+minutos+" Segundos: "+segundos);
 					
 					txtnum1.setEnabled(false);
 					txtnum2.setEnabled(false);
@@ -338,7 +338,7 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 					Record rec = new Record();					
 					int puesto = rec.Buscar(1);
 					rec.Ingresar(puesto, nombre, horas, minutos, segundos,intento);	
-					int confirma = JOptionPane.showConfirmDialog(null,"¿Desea Ver la Tabla de Puntajes?");
+					int confirma = JOptionPane.showConfirmDialog(null,"Â¿Desea Ver la Tabla de Puntajes?");
 					if (JOptionPane.OK_OPTION == confirma){
 						for(int j=0;j<puesto;j++){
 							rec.Mostrar((j+1));
@@ -353,7 +353,7 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 			}else{
 				String sonido1="Sonidos//002.wav";
 				Sonidos son = new Sonidos(sonido1);	
-				JOptionPane.showMessageDialog(null," ¡Pésima Digitación Corrige Pronto! ");
+				JOptionPane.showMessageDialog(null," Â¿PÃ©sima DigitaciÃ³n Corrige Pronto! ");
 				txtnum1.setText("");
 				txtnum2.setEnabled(false);
 				txtnum3.setEnabled(false);
@@ -409,7 +409,7 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 					String sonido3="Sonidos//003.wav";
 					Sonidos son = new Sonidos(sonido3);
 					
-					JOptionPane.showMessageDialog(null, "¡Ganaste! Intentos "+intento+" Tiempo:  Horas: "+horas+" Minutoss: "+minutos+" Segundos: "+segundos);
+					JOptionPane.showMessageDialog(null, "Â¡Ganaste! Intentos "+intento+" Tiempo:  Horas: "+horas+" Minutoss: "+minutos+" Segundos: "+segundos);
 					
 					txtnum1.setEnabled(false);
 					txtnum2.setEnabled(false);
@@ -420,7 +420,7 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 					Record rec = new Record();					
 					int puesto = rec.Buscar(1);
 					rec.Ingresar(puesto, nombre, horas, minutos, segundos,intento);	
-					int confirma = JOptionPane.showConfirmDialog(null,"¿Desea Ver la Tabla de Puntajes?");
+					int confirma = JOptionPane.showConfirmDialog(null,"Â¿Desea Ver la Tabla de Puntajes?");
 					if (JOptionPane.OK_OPTION == confirma){
 						for(int j=0;j<puesto;j++){
 							rec.Mostrar((j+1));
@@ -435,7 +435,7 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 			}else{
 				String sonido1="Sonidos//002.wav";
 				Sonidos son = new Sonidos(sonido1);	
-				JOptionPane.showMessageDialog(null," ¡Pésima Digitación Corrige Pronto! ");
+				JOptionPane.showMessageDialog(null," Â¿PÃ©sima DigitaciÃ³n Corrige Pronto! ");
 				txtnum1.setText("");
 				txtnum2.setEnabled(false);
 				txtnum3.setEnabled(false);
@@ -498,6 +498,10 @@ int a,b,c,d,e,f,g,h,intento=0,fama,punto,cfs=4,Vh[],Vm[];
 			Vm[2] = g;
 			Vm[3] = h;
 		}
+    System.out.println(e);
+    System.out.println(f);
+    System.out.println(g);
+    System.out.println(h);
 	}
 	//METODO PARA COMPARAR VECTORES HUMANO CON MAQUINA
 	public void compara(){

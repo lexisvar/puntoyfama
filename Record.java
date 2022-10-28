@@ -51,12 +51,12 @@ public class Record extends JFrame{
     	getContentPane().add(new JScrollPane(table));   	    	
     	
 		try{			
-			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			//txa.setText("Puente listo");
 		}
-		catch(Exception f)
+		catch(ClassNotFoundException f)
 		{
-			System.out.println("Puente malo");
+			System.out.println("Puente malo ".concat(f.getMessage()));
 		}		
 		this.setVisible(false);		
     }			
@@ -64,7 +64,7 @@ public class Record extends JFrame{
  	{
  	Connection conexion;
  	Statement instruccion;
- 	String mDNS="jdbc:odbc:Mejor";
+ 	String mDNS="jdbc:mysql://localhost:3306/Mejor";
  	String borratabla="DROP Table Mejores";//NOMBRE DE LA TABLA
  	String creatabla="Create Table Mejores("+//CREAR TABLA
  		"Puesto VARCHAR(2)NOT NULL,"+//NO NULL INDICA QUE ES UN CAMPO REQUERIDO
@@ -76,7 +76,7 @@ public class Record extends JFrame{
  							
  							try
  							{
- 								conexion=DriverManager.getConnection(mDNS);
+ 								conexion=DriverManager.getConnection(mDNS,"admin","root");
  								System.out.println("Conexion Realizada"); 								
  								instruccion=conexion.createStatement();
  									try
@@ -86,10 +86,10 @@ public class Record extends JFrame{
  									}
 									catch(SQLException sql)
 									{
-										JOptionPane.showMessageDialog(null,"Error al Borrar");
+										JOptionPane.showMessageDialog(null,"Error al Borrar "+sql.getMessage());
 									}
  							instruccion.executeUpdate(creatabla);
- 							JOptionPane.showMessageDialog(null,"Tabla de Puntaje Vacía");
+ 							JOptionPane.showMessageDialog(null,"Tabla de Puntaje VacÃ­a");
  							conexion.close();
  							}
  							catch(SQLException sql)
@@ -110,11 +110,11 @@ public class Record extends JFrame{
  						min+"','"+
  							seg+"','"+
  								inten+"')";
- 		String mDNS="jdbc:odbc:Mejor";
+    String mDNS="jdbc:mysql://localhost:3306/Mejor";
  		
  		try
  		{
- 			conexion=DriverManager.getConnection(mDNS);
+ 			conexion=DriverManager.getConnection(mDNS,"admin","root");
  			instruccion=conexion.createStatement();
  			instruccion.executeUpdate(ingres);
  			System.out.println("Registro Almacenado");
@@ -122,7 +122,7 @@ public class Record extends JFrame{
  		}
  		catch(SQLException sql)
  		{
- 			System.out.println("No almacenó el registro"); 			
+ 			System.out.println("No almacenÃ³ el registro "+sql.getMessage()); 			
  		} 
  	}
 	//MOSTRAR
@@ -132,10 +132,10 @@ public class Record extends JFrame{
  		Statement instruccion;
  		ResultSet resultado;
  		String buscar="SELECT * FROM Mejores WHERE(Puesto='"+i+"')"; 		
- 		String mDNS="jdbc:odbc:Mejor";
+ 		String mDNS="jdbc:mysql://localhost:3306/Mejor";
  		try
  		{
- 			conexion=DriverManager.getConnection(mDNS);
+ 			conexion=DriverManager.getConnection(mDNS,"admin","root");
  			instruccion=conexion.createStatement();
  			resultado=instruccion.executeQuery(buscar);
  			
@@ -162,10 +162,10 @@ public class Record extends JFrame{
  		Statement instruccion;
  		ResultSet resultado; 		
  		String buscar="SELECT * FROM Mejores WHERE(Puesto='"+num2+"')";
- 		String mDNS="jdbc:odbc:Mejor";
+ 		String mDNS="jdbc:mysql://localhost:3306/Mejor";
  		try
  		{
- 			conexion=DriverManager.getConnection(mDNS);
+ 			conexion=DriverManager.getConnection(mDNS,"admin","root");
  			instruccion=conexion.createStatement();
  			resultado=instruccion.executeQuery(buscar);
  			
